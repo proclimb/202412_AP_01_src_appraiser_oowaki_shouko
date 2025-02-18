@@ -274,7 +274,7 @@ function subStockEditView($param)
 							$check = 'checked = "checked"';
 						}
 					?>
-						<input type="radio" name="rank" value="<?php print $i + 1; ?>" <?php if ($param["rank"] == $i) print ' checked="checked"'; ?> /> <?php print fnRankName($i); ?>
+						<input type="radio" name="rank" value="<?php print $i + 1; ?>" <?php print $check; ?> /> <?php print fnRankName($i); ?>
 					<?php
 					}
 					?>
@@ -351,10 +351,17 @@ function subStockEditView($param)
 				<th>仕入経緯</th>
 				<td>
 					<?php
+					if (!$param["stockNo"]) {
+						$param["how"] = 1;
+					}
 					for ($i = 0; $i < 6; $i++) {
+						$check = '';
+						if (($param["how"] - 1) == $i) {
+							$check = 'checked = "checked"';
+						}
 					?>
 						<br />
-						<input type="radio" name="how" value="<?php print $i + 1; ?>" <?php if ($param["how"] == $i) print ' checked="checked"'; ?> /> <?php print fnHowName($i); ?>
+						<input type="radio" name="how" value="<?php print $i + 1; ?>" <?php print $check; ?> /> <?php print fnHowName($i); ?>
 					<?php
 					}
 					?>
