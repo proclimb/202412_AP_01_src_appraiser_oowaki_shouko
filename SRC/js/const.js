@@ -23,8 +23,8 @@ function fnConstEditCheck() {
 	if (!fnYMDCheck("正しい電気水道開栓連絡日", form.lineOpenContactDT)) { return; }
 	if (!fnYMDCheck("正しい電気水道閉栓連絡日", form.lineCloseContactDT)) { return; }
 	if (isLength(200, "備考", form.lineContactNote)) { return; }
-	if (isLength(100, "電気連絡者", form.electricityCharge))
-		if (isLength(100, "ガス連絡者", form.gasCharge)) { return; }
+	if (isLength(100, "電気連絡者", form.electricityCharge)) { return; }
+	if (isLength(100, "ガス連絡者", form.gasCharge)) { return; }
 	if (isLength(100, "荷＆鍵引取", form.receive)) { return; }
 	if (isLength(100, "給湯", form.hotWater)) { return; }
 	if (!fnYMDCheck("正しい現調日付", form.siteDate)) { return; }
