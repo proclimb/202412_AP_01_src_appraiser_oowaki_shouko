@@ -111,7 +111,7 @@ function fnGuideMove(muki, articleNo) {
 		tags += "<td>" + $(obj.children()[3]).html() + "</td>";
 
 		// 登録ボタンの作成
-		tags += "<td><input type=\"button\" value=\"&gt;\" /></td>";
+		tags += "<td><input type=\"button\" value=\"&gt;\" onClick=\"fnGuideMove( 'toRight', '" + articleNo + "' );\"/></td>";
 		tags += "</tr>";
 
 		// 検索側に追加
@@ -122,10 +122,10 @@ function fnGuideMove(muki, articleNo) {
 	}
 
 	// 色の再設定
-	$("#search tr").filter(":odd").find("td").attr("class", "list_td1");
+	$("#search tr").filter(":odd").find("td").attr("class", "list_td0");
 	$("#search tr").filter(":even").find("td").attr("class", "list_td1");
-	$("#regist tr").filter("odd").find(".td").attr("class", "list_td0");
-	$("#regist tr").filter("even").find(".td").attr("class", "list_td1");
+	$("#regist tr").filter(":odd").find("td").attr("class", "list_td0");
+	$("#regist tr").filter(":even").find("td").attr("class", "list_td1");
 }
 
 
