@@ -8,6 +8,7 @@ function subAdminUser()
 
 	subMenu();
 ?>
+	<script type="text/javascript" src="./js/adminUser.js"></script>
 	<h1>ユーザー情報画面</h1>
 
 	<form name="form" id="form" action="index.php" method="post">
@@ -43,7 +44,9 @@ function subAdminUser()
 						<td class="list_td<?php print $i; ?>"><?php print $password; ?></td>
 						<td class="list_td<?php print $i; ?>"><?php print fnAuthorityName($authority); ?></td>
 						<td class="list_td<?php print $i; ?>">
-							<a href="javascript:fnAdminUserDeleteCheck(<?php print $userNo; ?>,'<?php print $name; ?>');">削除</a>
+							<?php if ($userNo > 1) { ?>
+								<a href="javascript:fnAdminUserDeleteCheck(<?php print $userNo; ?>,'<?php print $name; ?>');">削除</a>
+							<?php } ?>
 						</td>
 					</tr>
 				<?php
